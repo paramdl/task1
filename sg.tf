@@ -1,6 +1,6 @@
 resource "aws_security_group" "Tomcat_conf" {
 name = "Tomcat_conf"
-vpc_id = "vpc-0d266b61d526a0ad5"
+vpc_id = "vpc-09dbb06c91f13e82c"
 
 ingress {
     cidr_blocks = [
