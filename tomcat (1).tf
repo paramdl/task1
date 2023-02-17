@@ -12,9 +12,9 @@ region= "ap-south-1"
 }
 
 resource "aws_instance" "Tomcat_conf" {
-  ami           = "ami-01a4f99c4ac11b03c"
+  ami           = "ami-0e742cca61fb65051"
   instance_type = "t2.micro"
-key_name= "project"
+key_name= "aws"
 vpc_security_group_ids      = ["${aws_security_group.Tomcat_conf.id}"]
 provisioner "file" {
     source      = "conf.sh"
@@ -33,7 +33,7 @@ connection {
     type         = "ssh"
         host         = self.public_ip
 	    user         = "ec2-user"
-	        private_key  = file("C:\\Users\\User\\Downloads\\project.pem" )
+	        private_key  = file("/root/task1/aws.pem" )
 		   }
   tags = {
     "Name" = "Tomcat_conf"
